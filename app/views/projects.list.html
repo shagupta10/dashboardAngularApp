@@ -1,0 +1,84 @@
+<h1>List Project</h1>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12">
+      <form>
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control" name="proj" id="proj" ng-model="proj"/>
+
+          <div class="input-group-btn">
+            <button class="btn btn-default">
+              <span class="glyphicon glyphicon-filter"></span> Filter
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      &nbsp;
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-xs-12 col-md-4" ng-repeat="item in projects|filter: proj">
+      <div class="panel-wrapper">
+        <div class="panel-title">
+          <a ui-sref="projects.view({id:item.id})">{{item.name}}</a>: <span class="badge">{{item.no_people}}</span>
+          <a ui-sref="projects.edit({id:item.id})">Edit</a>
+        </div>
+        <div class="panel-stage">
+          <div class="row">
+            <div class="col-xs-8 col-md-6">
+              <div class="panel-wrapper">
+                <div class="panel-title">
+                  Red Days
+                </div>
+                <div class="panel-stage">
+                  <div class="red-days">{{item.red_days}}</div>
+                </div>
+
+              </div>
+            </div>
+            <div class="col-xs-8 col-md-6">
+              <div class="panel-wrapper">
+                <div class="panel-title">
+                  Billable People
+                </div>
+                <div class="panel-stage">
+                  <canvas id="doughnut" class="chart chart-doughnut" data="item.data"
+                          labels="item.labels"></canvas>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="panel-wrapper">
+                <div class="panel-title">
+                  People
+                </div>
+                <div class="panel-stage">
+                  Anil, ...
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-notes">
+          Owned by Anil
+        </div>
+      </div>
+    </div>
+
+
+</div>
+</div>

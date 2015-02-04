@@ -1,0 +1,114 @@
+
+<form ng-submit="add()" name="form">
+<div class="container">
+  <h3>Edit Organization</h3>
+  <div class="row" >
+    <div class="col-xs-12">
+      <div class="panel-wrapper">
+        <div class="panel-title">
+
+          <div class="row">
+
+            <div class="col-xs-4 col-md-2">
+              <input type="hidden"   ng-model="item.id">
+              <span>Name:</span>
+
+            </div>
+            <div class="col-xs-8 col-md-8">
+              <input type="text" ng-model="item.name" required>
+
+            </div>
+
+
+          </div>
+          <div class="row">
+            <div class="col-xs-12"> <hr> </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4 col-md-2">
+              <span>Owner:</span>
+            </div>
+            <div class="col-xs-8 col-md-8">
+              <input type="text" ng-model="item.owner" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12"> <hr> </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4 col-md-2">
+              <span>numOfPeople:</span>
+            </div>
+            <div class="col-xs-8 col-md-8">
+              <input type="text" ng-model="item.numOfPeople"  required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12"> <hr> </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4 col-md-2">
+              <span>Bench Count:</span>
+            </div>
+            <div class="col-xs-8 col-md-8">
+              <input type="text" ng-model="item.benchCount" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12"> <hr> </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4 col-md-2">
+              <span>billable head count:</span>
+            </div>
+            <div class="col-xs-8 col-md-8">
+              <input type="text" ng-model="item.billableHeadCount"  required>
+            </div>
+          </div>
+        </div>
+        <div class="panel-stage">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="panel-wrapper">
+                <div class="panel-title">
+                  Billable Vs Bench
+                </div>
+                <div class="panel-stage">
+                  TBD
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="panel-wrapper">
+                <div class="panel-title">
+                  Projects
+                </div>
+                <div class="panel-stage">
+                <!--  <ul ng-repeat="proj in  findProjectArrayById(item.projects)">
+                    <li>
+                      <input type="text" ng-model="proj">
+                    </li>
+
+                  </ul>-->
+
+                  <select data-ng-options="o.name for o in options" data-ng-model="selectedOption"></select>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-notes">
+          Owned by Vinayak
+        </div>
+      </div>
+      <input type="submit" class="btn btn-primary" value="Save" ng-disabled="form.$invalid">
+    </div>
+  </div>
+
+</div>
+</form>
