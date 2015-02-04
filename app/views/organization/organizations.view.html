@@ -1,0 +1,59 @@
+<div class="container">
+  <h3>Organizations </h3>
+  <div class="row">
+    <div class="col-xs-12 col-md-12" ng-repeat="item in org">
+      <div class="panel-wrapper">
+        <div class="panel-title">
+          <div class="row">
+            <div class="col-xs-8 col-md-8">
+          <a ui-sref="organizations.view({orgId:item.id})">{{item.name}}</a></div>
+          <div class="col-xs-offset-8 col-xs-2">
+            <a ui-sref="organizations.edit({orgId:item.id})"><i class="glyphicon glyphicon-edit"></i> Edit</a></div>
+          <div class="col-xs-2">
+            <a href="#"  ng-click="delete(item)"><i class="glyphicon glyphicon-remove"></i> Delete</a></div>
+
+       </div>
+
+        </div>
+        <div class="panel-stage">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="panel-wrapper">
+                <div class="panel-title">
+                  Billable Vs Bench
+                </div>
+                <div class="panel-stage">
+                  <canvas id="line" class="chart chart-line" data="item.data"
+                          labels="item.labels" legend="true" series="item.series"
+                          click="onClick">
+                  </canvas>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="panel-wrapper">
+                <div class="panel-title">
+                  Projects
+                </div>
+                <div class="panel-stage">
+                  {{findProjectById(item.projects)}}
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-notes">
+          Owned by Vinayak
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,110 @@
+<h3>Add Organization</h3>
+<form ng-submit="add()" name="form">
+  <div class="container">
+    <div class="row"  >
+      <div class="col-xs-12">
+        <div class="panel-wrapper">
+          <div class="panel-title">
+
+            <div class="row">
+
+              <div class="col-xs-4 col-md-2">
+                <input type="hidden"  name="orgId" id="orgId">
+                <span>Name:</span>
+
+              </div>
+              <div class="col-xs-8 col-md-8">
+                <input type="text" name="orgName" ng-model="orgName" required>
+
+              </div>
+
+
+            </div>
+            <div class="row">
+              <div class="col-xs-12"> <hr> </div>
+            </div>
+           <div class="row">
+              <div class="col-xs-4 col-md-2">
+                <span>Owner:</span>
+              </div>
+              <div class="col-xs-8 col-md-8">
+                <input type="text" ng-model="orgOwner" name="orgOwner" required>
+              </div>
+            </div>
+         <div class="row">
+              <div class="col-xs-12"> <hr> </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-4 col-md-2">
+                <span>numOfPeople:</span>
+              </div>
+              <div class="col-xs-8 col-md-8">
+                <input type="text" ng-model="orgPeople" name="orgPeople" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12"> <hr> </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-4 col-md-2">
+                <span>Bench Count:</span>
+              </div>
+              <div class="col-xs-8 col-md-8">
+                <input type="text" ng-model="orgBenchCount" name="orgBenchCount" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12"> <hr> </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-4 col-md-2">
+                <span>billable head count:</span>
+              </div>
+              <div class="col-xs-8 col-md-8">
+                <input type="text" ng-model="orgBillableHeadCount" name="orgBillableHeadCount" required>
+              </div>
+            </div>
+
+
+          <div class="panel-stage">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="panel-wrapper">
+                  <div class="panel-title">
+                    Billable Vs Bench
+                  </div>
+                  <div class="panel-stage">
+                    TBD
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="panel-wrapper">
+                  <div class="panel-title">
+                    Projects
+                  </div>
+                  <div class="panel-stage">
+                  <!--  <ul> <li> <input type="text" value="PDX"> </li> <li> <input type="text" value="Google"> </li> <li> <input type="text" value="Halliburton"> </li> </ul>-->
+                <select data-ng-options="o.name for o in options" data-ng-model="selectedOption"></select>
+
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-notes">
+            Owned by Vinayak
+          </div>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Save" ng-disabled="form.$invalid">
+      </div>
+    </div>
+
+  </div>
+</form>

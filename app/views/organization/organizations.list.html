@@ -1,0 +1,78 @@
+<div class="container">
+  <h3>Organization List</h3>
+  <div class="row">
+    <div class="col-md-12">
+      <form>
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control" ng-model="proj"/>
+
+          <div class="input-group-btn">
+            <button class="btn btn-default">
+              <span class="glyphicon glyphicon-filter"></span> Filter
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      &nbsp;
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-4" ng-repeat="item in organization|filter: proj">
+      <div class="panel-wrapper">
+        <div class="panel-title">
+
+          <a ui-sref="organizations.view({orgId:item.id})">{{item.name}}</a>
+          <span style="text-align:right">
+            <a ui-sref="organizations.edit({orgId:item.id})">Edit</a>
+          </span>
+
+        </div>
+        <div class="panel-stage">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="panel-wrapper">
+                <div class="panel-title">
+                  Billable Vs Bench
+                </div>
+                <div class="panel-stage">
+                  <canvas id="line" class="chart chart-line" data="item.data"
+                          labels="item.labels" legend="true" series="item.series"
+                          click="onClick">
+                  </canvas>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="panel-wrapper">
+                <div class="panel-title">
+                  Projects
+                </div>
+                <div class="panel-stage">
+                  {{findProjectById(item.projects)}}
+
+                                  </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-notes">
+          Owned by {{item.owner}}
+        </div>
+      </div>
+
+      </div>
+
+
+
+
+    </div>
+  </div>
